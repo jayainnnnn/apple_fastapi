@@ -78,5 +78,7 @@ def mac_prices(product: macbook_input,db: Session = Depends(get_db)):
     prices = query.order_by(macbook_prices.DATE.asc()).all()
 
     return prices
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
 
